@@ -24,6 +24,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", href: "/", icon: HomeIcon },
     { name: "Features", href: "#features", icon: Zap },
+    { name: "Explore", href: "/explore", icon: BotMessageSquare },
     { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
     { name: "History", href: "/history", icon: History },
     { name: "Pricing", href: "#pricing", icon: CreditCard },
