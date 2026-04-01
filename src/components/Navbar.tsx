@@ -23,18 +23,18 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "/", icon: HomeIcon },
-    { name: "Features", href: "#features", icon: Zap },
+    { name: "Features", href: "/features", icon: Zap },
     { name: "Explore", href: "/explore", icon: BotMessageSquare },
+    { name: "Blog", href: "/blog", icon: History },
+    { name: "About", href: "/about", icon: LayoutDashboard },
+    { name: "Contact", href: "/contact", icon: CreditCard },
     { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-    { name: "History", href: "/history", icon: History },
-    { name: "Pricing", href: "#pricing", icon: CreditCard },
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[100] border-b border-indigo-500/10 bg-slate-950/70 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          
           {/* Logo Section */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center gap-2 group">
@@ -62,7 +62,9 @@ const Navbar = () => {
                 >
                   <link.icon
                     className={`w-4 h-4 transition-colors ${
-                      pathname === link.href ? "text-indigo-400" : "text-slate-200 group-hover:text-indigo-400"
+                      pathname === link.href
+                        ? "text-indigo-400"
+                        : "text-slate-200 group-hover:text-indigo-400"
                     }`}
                   />
                   {link.name}
@@ -102,21 +104,27 @@ const Navbar = () => {
                 <UserButton />
               </div>
             )}
-            
+
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 text-slate-300 hover:text-indigo-400 transition-colors"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Menu Panel */}
-      <div 
+      <div
         className={`md:hidden absolute w-full bg-slate-950/95 border-b border-white/10 transition-all duration-300 ${
-          isOpen ? "max-h-[500px] opacity-100 py-6" : "max-h-0 opacity-0 pointer-events-none overflow-hidden"
+          isOpen
+            ? "max-h-[500px] opacity-100 py-6"
+            : "max-h-0 opacity-0 pointer-events-none overflow-hidden"
         }`}
       >
         <div className="px-4 space-y-4">
@@ -126,13 +134,15 @@ const Navbar = () => {
               href={link.href}
               onClick={() => setIsOpen(false)}
               className={`flex items-center gap-3 text-lg font-medium py-2 transition-colors ${
-                pathname === link.href ? "text-indigo-400" : "text-slate-300 hover:text-indigo-400"
+                pathname === link.href
+                  ? "text-indigo-400"
+                  : "text-slate-300 hover:text-indigo-400"
               }`}
             >
               <link.icon className="w-5 h-5" /> {link.name}
             </Link>
           ))}
-          
+
           <div className="pt-4 border-t border-white/10">
             {!isSignedIn && (
               <div className="flex flex-col gap-3">

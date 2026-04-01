@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+// import Navbar from "@/components/Navbar"; // Not used in root layout
+// import Footer from "@/components/Footer"; // Not used in root layout
 import { ClerkProvider } from "@clerk/nextjs";
 import DemoOverlay from "@/components/DemoOverlay";
 
@@ -29,11 +29,9 @@ export default function RootLayout({
         data-theme="dark"
         className={`${poppins.variable} h-full antialiased`}
       >
-        <body className="min-h-full bg-slate-950 text-slate-200 font-poppins flex flex-col">
+        <body className="min-h-full bg-background text-slate-200 font-poppins flex flex-col">
           <DemoOverlay></DemoOverlay>
-          <Navbar />
-          <main className="flex-grow pt-20">{children}</main>
-          <Footer />
+          {children}
         </body>
       </html>
     </ClerkProvider>

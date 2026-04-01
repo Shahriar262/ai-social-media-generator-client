@@ -4,8 +4,6 @@ import FilteredGrid from "@/components/explore/FilteredGrid";
 import { ToolAsset } from "@/types";
 
 
-
-
 export default function ExplorePage() {
   
   const data = assetsData as unknown as ToolAsset[];

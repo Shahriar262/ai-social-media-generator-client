@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, ChevronDown, SlidersHorizontal } from "lucide-react";
+import { Search, ChevronDown } from "lucide-react";
 
 interface ExploreHeaderProps {
   onSearch: (query: string) => void;
@@ -8,7 +8,11 @@ interface ExploreHeaderProps {
   onSort?: (sortType: string) => void;
 }
 
-export default function ExploreHeader({ onSearch, onFilter, onSort }: ExploreHeaderProps) {
+export default function ExploreHeader({
+  onSearch,
+  onFilter,
+  onSort,
+}: ExploreHeaderProps) {
   return (
     <div className="space-y-8 mb-12">
       {/* ১. টাইটেল সেকশন */}
@@ -17,7 +21,8 @@ export default function ExploreHeader({ onSearch, onFilter, onSort }: ExploreHea
           Explore <span className="text-indigo-500">Synapse</span> Assets
         </h1>
         <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base font-medium">
-          Discover high-performance AI models, neural assets, and digital components.
+          Discover high-performance AI models, neural assets, and digital
+          components.
         </p>
       </div>
 
@@ -41,7 +46,7 @@ export default function ExploreHeader({ onSearch, onFilter, onSort }: ExploreHea
             <select
               aria-label="Filter by Category"
               className="w-full appearance-none bg-white/5 border border-white/10 hover:border-indigo-500/50 rounded-2xl py-4 px-5 text-xs font-bold text-slate-300 cursor-pointer outline-none transition-all"
-              onChange={(e) => onFilter && onFilter (e.target.value)}
+              onChange={(e) => onFilter && onFilter(e.target.value)}
             >
               <option value="all">All Categories</option>
               <option value="neural">Neural Nets</option>
@@ -65,8 +70,6 @@ export default function ExploreHeader({ onSearch, onFilter, onSort }: ExploreHea
             </select>
             <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 pointer-events-none" />
           </div>
-
-          
         </div>
       </div>
     </div>

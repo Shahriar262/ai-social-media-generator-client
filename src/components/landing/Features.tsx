@@ -190,6 +190,7 @@ export default function Features() {
                   <button 
                     key={id} 
                     onClick={() => setActiveStat(id)} 
+                    
                     className={`w-3 h-10 md:w-2.5 md:h-10 rounded-full transition-all duration-500 ${
                       activeStat === id ? 'bg-primary shadow-[0_0_20px_rgba(99,102,241,0.6)]' : 'bg-white/10 hover:bg-white/20'
                     }`} 
